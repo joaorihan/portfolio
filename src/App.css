@@ -1,38 +1,235 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Light Theme */
+body.light {
+  background: #fff8f5; /* Light pinkish background */
+  color: #333;
+}
+
+/* Dark Theme */
+body.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+/* Container principal */
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
+}
+
+/* Fix Bootstrap navbar styling */
+.navbar {
+  transition: background-color 0.3s ease-in-out;
+  padding: 1rem;
+}
+
+body.dark .navbar {
+  background-color: #333 !important;
+  color: #fff;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+body.dark .navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+}
+
+body.dark .navbar-nav .nav-link {
+  color: #bcb9b9
+}
+
+
+.navbar-nav .nav-link:hover {
+  color: #e87b7b;
+}
+
+body.dark .navbar-nav .nav-link:hover {
+  color: #f5a6a6;
+}
+
+/* Style for dark mode toggle button */
+.toggle-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggle-btn:hover .toggle-icon {
+  transform: scale(1.1);
+}
+
+
+/* Hero Section */
+.hero-section {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  transition: background 0.3s ease-in-out;
+  background: linear-gradient(135deg, #fff8f5 60%, #fce8e2 100%);
 }
 
-.App-link {
-  color: #61dafb;
+body.dark .hero-section {
+  background: linear-gradient(135deg, #2c2c2c 60%, #1e1e1e 100%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Hero Text */
+.hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: inherit;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 46px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  background-color: #55a1a5;
+  border-color: #44b1a1;
+}
+
+body.dark .social-icons a:hover {
+  background-color: #55a1a5;
+}
+
+.toggle-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+
+.dropping-texts {
+  display: inline-block;
+  width: 180px;
+  text-align: left;
+  height: 36px;
+  vertical-align: -2px;
+  position: relative;
+}
+
+.dropping-texts > div {
+  font-size: 0px;
+  opacity: 0;
+  position: absolute;
+  font-weight: 300;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dropping-texts > div:nth-child(1) {
+  animation: roll 8s linear infinite 0s;
+}
+.dropping-texts > div:nth-child(2) {
+  animation: roll 8s linear infinite 1.5s;
+}
+.dropping-texts > div:nth-child(3) {
+  animation: roll 8s linear infinite 3s;
+}
+.dropping-texts > div:nth-child(4) {
+  animation: roll2 8s linear infinite 4.5s;
+}
+
+@keyframes roll {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
   }
-  to {
-    transform: rotate(360deg);
+  10% {
+    font-size: 36px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    font-size: 36px;
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes roll2 {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  10% {
+    font-size: 36px;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  35% {
+    font-size: 36px;
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  100% {
+    opacity: 0;
   }
 }
