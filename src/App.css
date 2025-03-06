@@ -57,9 +57,8 @@ body.dark .navbar-brand {
 }
 
 body.dark .navbar-nav .nav-link {
-  color: #bcb9b9
+  color: #bcb9b9;
 }
-
 
 .navbar-nav .nav-link:hover {
   color: #e87b7b;
@@ -87,16 +86,16 @@ body.dark .navbar-nav .nav-link:hover {
   transform: scale(1.1);
 }
 
-
 /* Hero Section */
 .hero-section {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center;           /* Center vertically */
   text-align: center;
-  padding: 3rem 1rem;
+  min-height: calc(100vh - 80px);    /* Fill screen minus navbar height */
+  padding: 2rem 1rem;
   transition: background 0.3s ease-in-out;
   background: linear-gradient(135deg, #fff8f5 60%, #fce8e2 100%);
 }
@@ -118,6 +117,15 @@ body.dark .hero-section {
   line-height: 1.5;
 }
 
+/* Dropping Texts (container) */
+.dropping-texts {
+  display: inline-block;
+  position: relative;
+  width: 180px;
+  height: 36px;
+  margin-bottom: 2rem; /* Space before social icons */
+}
+
 /* Social Icons */
 .social-icons {
   display: flex;
@@ -129,7 +137,7 @@ body.dark .hero-section {
   display: inline-block;
   font-size: 1.4rem;
   font-weight: bold;
-  color: inherit;
+  color: inherit; /* Adapts to light/dark text color */
   border: 2px solid currentColor;
   border-radius: 50%;
   width: 50px;
@@ -147,89 +155,4 @@ body.dark .hero-section {
 
 body.dark .social-icons a:hover {
   background-color: #55a1a5;
-}
-
-.toggle-icon {
-  width: 24px;
-  height: 24px;
-  vertical-align: middle;
-}
-
-
-.dropping-texts {
-  display: inline-block;
-  width: 180px;
-  text-align: left;
-  height: 36px;
-  vertical-align: -2px;
-  position: relative;
-}
-
-.dropping-texts > div {
-  font-size: 0px;
-  opacity: 0;
-  position: absolute;
-  font-weight: 300;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.dropping-texts > div:nth-child(1) {
-  animation: roll 8s linear infinite 0s;
-}
-.dropping-texts > div:nth-child(2) {
-  animation: roll 8s linear infinite 1.5s;
-}
-.dropping-texts > div:nth-child(3) {
-  animation: roll 8s linear infinite 3s;
-}
-.dropping-texts > div:nth-child(4) {
-  animation: roll2 8s linear infinite 4.5s;
-}
-
-@keyframes roll {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-  }
-  10% {
-    font-size: 36px;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  30% {
-    font-size: 36px;
-    opacity: 1;
-  }
-  40% {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.8);
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes roll2 {
-  0% {
-    font-size: 0px;
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-  }
-  10% {
-    font-size: 36px;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-  35% {
-    font-size: 36px;
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.8);
-  }
-  100% {
-    opacity: 0;
-  }
 }
