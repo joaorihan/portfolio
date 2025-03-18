@@ -1,0 +1,44 @@
+# Ignore Maven target directory (compiled files)
+target/
+
+# Ignore .mvn (Maven wrapper)
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore compiled Java classes
+*.class
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.tmp
+
+# Ignore OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files (IntelliJ, Eclipse, VS Code)
+.idea/
+.vscode/
+*.iml
+*.classpath
+*.project
+*.settings/
+
+# Ignore environment variables and secrets
+.env
+*.env
+
+# Ignore database-related files
+*.h2.db
+*.mv.db
+*.sqlite
+
+# Ignore generated JAR/WAR files
+*.jar
+*.war
+
+# Ignore test reports
+surefire-reports/
+test-output/
