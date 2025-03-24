@@ -8,6 +8,10 @@ import Projects from './pages/Projects';
 import About from './pages/About';       
 import Contact from './pages/Contact';   
 
+import PostList from "./components/PostList";
+import PostDetail from "./components/PostDetail";
+import CreatePost from "./components/CreatePost";
+
 function App() {
   // Check local storage for theme preference
   const [darkMode, setDarkMode] = useState(
@@ -47,6 +51,9 @@ function App() {
           path="/contact"
           element={<Contact darkMode={darkMode} toggleDarkMode={toggleDarkMode} />}
         />
+        <Route path="/posts" element={<PostList />} />
+        
+        <Route path="/create" element={<CreatePost />} />
       </Routes>
     </Router>
   );
