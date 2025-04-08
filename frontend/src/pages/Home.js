@@ -2,31 +2,35 @@ import React from 'react';
 import Header from '../components/Header';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-
-function Home({ darkMode, toggleDarkMode }) {
+function Home() {
   return (
-    <div>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main className="hero-section" id="home">
-        <h1>Hi, I'm João</h1>
-        <p>I'm a developer. I'm passionate about</p>
+    <div className="App">
+      <Header />
+      
+      <main className="hero-section">
+        <h1 className="hero-title">
+          Hi, I'm João
+        </h1>
+        <p className="hero-subtitle">
+          I'm a developer passionate about creating elegant solutions to complex problems.
+        </p>
 
         <div className="social-icons">
           <a
-            href="https://www.github.com/joaorihan"
+            href="https://github.com/joaorihan"
             target="_blank"
             rel="noopener noreferrer"
-            className="github-icon"
+            className="social-icon"
           >
-            <FaGithub/>
+            <FaGithub />
           </a>
           <a
-            href="https://www.linkedin.com"
+            href="https://linkedin.com/in/joaorihan"
             target="_blank"
             rel="noopener noreferrer"
-            className="linkedin-icon"
+            className="social-icon"
           >
-            <FaLinkedin/>
+            <FaLinkedin />
           </a>
         </div>
       </main>

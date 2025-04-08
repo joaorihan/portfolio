@@ -1,14 +1,54 @@
 import React from 'react';
 import Header from '../components/Header';
 
-function About({ darkMode, toggleDarkMode }) {
+function About() {
   return (
-    <div>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <div className="container my-5">
-        <h1>About</h1>
-        <p>About page content goes here.</p>
-      </div>
+    <div className="App">
+      <Header />
+      
+      <main className="content-section">
+        <h1 className="section-title">About Me</h1>
+        <div className="about-content">
+          <p className="about-text">
+            I'm a passionate developer with a focus on creating elegant and efficient solutions.
+            My journey in technology started with a curiosity about how things work,
+            and has evolved into a deep appreciation for clean code and user-centered design.
+          </p>
+          
+          <div className="skills-section">
+            <h2 className="skills-title">Skills</h2>
+            <div className="skills-grid">
+              <div className="skill-category">
+                <h3>Frontend</h3>
+                <ul>
+                  <li>React</li>
+                  <li>JavaScript</li>
+                  <li>HTML/CSS</li>
+                  <li>TypeScript</li>
+                </ul>
+              </div>
+              <div className="skill-category">
+                <h3>Backend</h3>
+                <ul>
+                  <li>Node.js</li>
+                  <li>Python</li>
+                  <li>SQL</li>
+                  <li>REST APIs</li>
+                </ul>
+              </div>
+              <div className="skill-category">
+                <h3>Tools</h3>
+                <ul>
+                  <li>Git</li>
+                  <li>Docker</li>
+                  <li>VS Code</li>
+                  <li>Figma</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
