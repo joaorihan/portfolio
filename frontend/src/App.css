@@ -158,7 +158,21 @@ html, body {
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.stars-count {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.star-icon {
+  color: #ffd700;
 }
 
 .project-link {

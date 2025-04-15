@@ -1,32 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaStar } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "Project One",
-    description: "A brief description of the project and its main features.",
-    technologies: ["React", "Node.js", "MongoDB"],
-    githubLink: "https://github.com/joaorihan/project-one",
-    demoLink: "https://project-one-demo.com"
+    title: "Portfolio",
+    description: "The website you are currently on!",
+    technologies: ["React", "Node.js", "Java"],
+    githubLink: "https://github.com/joaorihan/portfolio",
+    repo: "joaorihan/portfolio"
   },
   {
-    title: "Project Two",
-    description: "Another project description highlighting its unique aspects.",
-    technologies: ["Python", "Flask", "PostgreSQL"],
-    githubLink: "https://github.com/joaorihan/project-two",
-    demoLink: "https://project-two-demo.com"
+    title: "DeckOfCards",
+    description: "A physical, customizable and simple 52-card deck framework for minecraft.",
+    technologies: ["Java", "PaperMc"],
+    githubLink: "https://github.com/joaorihan/DeckOfCards",
+    repo: "joaorihan/DeckOfCards"
   },
   {
-    title: "Project Three",
-    description: "Description of the third project and its impact.",
-    technologies: ["TypeScript", "Next.js", "TailwindCSS"],
-    githubLink: "https://github.com/joaorihan/project-three",
-    demoLink: "https://project-three-demo.com"
+    title: "Todo-App",
+    description: "A simple todo-app built with Python, Flask and SQLAlchemy.",
+    technologies: ["Python", "Flask", "SQLAlchemy"],
+    githubLink: "https://github.com/joaorihan/flask-todo-app",
+    repo: "joaorihan/flask-todo-app"
+  },
+  {
+    title: "RockPaperScissors",
+    description: "An interactive two-hand rock-paper-scissors game built with C#.",
+    technologies: ["C#"],
+    githubLink: "https://github.com/joaorihan/rock-paper-scissors",
+    repo: "joaorihan/rock-paper-scissors"
+  },
+  {
+    title: "CourierPrime",
+    description: "A unique mail system plugin for Spigot Minecraft servers",
+    technologies: ["Java", "SpigotMC"],
+    githubLink: "https://github.com/joaorihan/CourierPrime",
+    repo: "joaorihan/CourierPrime"
   }
 ];
 
 function Projects() {
+  const [stars, setStars] = useState({});
+
+  useEffect(() => {
+    const fetchStars = async () => {
+      const starsData = {};
+      for (const project of projects) {
+        try {
+          const response = await fetch(`https://api.github.com/repos/${project.repo}`);
+          const data = await response.json();
+          starsData[project.repo] = data.stargazers_count;
+        } catch (error) {
+          console.error(`Error fetching stars for ${project.repo}:`, error);
+          starsData[project.repo] = 0;
+        }
+      }
+      setStars(starsData);
+    };
+
+    fetchStars();
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -58,16 +93,10 @@ function Projects() {
                   <FaGithub className="link-icon" />
                   <span>View on GitHub</span>
                 </a>
-                {project.demoLink && (
-                  <a 
-                    href={project.demoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="project-link"
-                  >
-                    <span>Live Demo</span>
-                  </a>
-                )}
+                <div className="stars-count">
+                  <FaStar className="star-icon" />
+                  <span>{stars[project.repo] || 0}</span>
+                </div>
               </div>
             </div>
           ))}
