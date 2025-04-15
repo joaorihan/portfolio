@@ -93,10 +93,12 @@ function Projects() {
                   <FaGithub className="link-icon" />
                   <span>View on GitHub</span>
                 </a>
-                <div className="stars-count">
-                  <FaStar className="star-icon" />
-                  <span>{stars[project.repo] || 0}</span>
-                </div>
+                {stars[project.repo] > 0 && (
+                  <div className="stars-count">
+                    <FaStar className="star-icon" />
+                    <span>{stars[project.repo]}</span>
+                  </div>
+                )}
               </div>
             </div>
           ))}
