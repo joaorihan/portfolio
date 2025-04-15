@@ -163,7 +163,12 @@ html, body {
   margin-top: 1rem;
 }
 
-.stars-count {
+.repo-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stats-count {
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -173,6 +178,10 @@ html, body {
 
 .star-icon {
   color: #ffd700;
+}
+
+.fork-icon {
+  color: #666;
 }
 
 .project-link {

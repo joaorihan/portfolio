@@ -1,14 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
-import { FaGithub, FaStar } from 'react-icons/fa';
+import { FaGithub, FaStar, FaCodeBranch } from 'react-icons/fa';
 
 const projects = [
   {
     title: "Portfolio",
-    description: "The website you are currently on!",
+    description: "The website you are currently on! Built with React, Node.js and Java.",
     technologies: ["React", "Node.js", "Java"],
     githubLink: "https://github.com/joaorihan/portfolio",
     repo: "joaorihan/portfolio"
+  },
+  {
+    title: "CourierPrime",
+    description: "A unique mail system plugin for Spigot Minecraft servers",
+    technologies: ["Java", "SpigotMC"],
+    githubLink: "https://github.com/joaorihan/CourierPrime",
+    repo: "joaorihan/CourierPrime"
+  },
+  {
+    title: "SOAPoint",
+    description: "Ordering system built with Java, Spring Boot for the SOA course at University.",
+    technologies: ["Java", "Spring Boot"],
+    githubLink: "https://github.com/joaorihan/SOAPoint",
+    repo: "joaorihan/SOAPoint"
   },
   {
     title: "DeckOfCards",
@@ -31,35 +45,32 @@ const projects = [
     githubLink: "https://github.com/joaorihan/rock-paper-scissors",
     repo: "joaorihan/rock-paper-scissors"
   },
-  {
-    title: "CourierPrime",
-    description: "A unique mail system plugin for Spigot Minecraft servers",
-    technologies: ["Java", "SpigotMC"],
-    githubLink: "https://github.com/joaorihan/CourierPrime",
-    repo: "joaorihan/CourierPrime"
-  }
+
 ];
 
 function Projects() {
-  const [stars, setStars] = useState({});
+  const [repoData, setRepoData] = useState({});
 
   useEffect(() => {
-    const fetchStars = async () => {
-      const starsData = {};
+    const fetchRepoData = async () => {
+      const data = {};
       for (const project of projects) {
         try {
           const response = await fetch(`https://api.github.com/repos/${project.repo}`);
-          const data = await response.json();
-          starsData[project.repo] = data.stargazers_count;
+          const repoInfo = await response.json();
+          data[project.repo] = {
+            stars: repoInfo.stargazers_count,
+            forks: repoInfo.forks_count
+          };
         } catch (error) {
-          console.error(`Error fetching stars for ${project.repo}:`, error);
-          starsData[project.repo] = 0;
+          console.error(`Error fetching data for ${project.repo}:`, error);
+          data[project.repo] = { stars: 0, forks: 0 };
         }
       }
-      setStars(starsData);
+      setRepoData(data);
     };
 
-    fetchStars();
+    fetchRepoData();
   }, []);
 
   return (
@@ -93,12 +104,20 @@ function Projects() {
                   <FaGithub className="link-icon" />
                   <span>View on GitHub</span>
                 </a>
-                {stars[project.repo] > 0 && (
-                  <div className="stars-count">
-                    <FaStar className="star-icon" />
-                    <span>{stars[project.repo]}</span>
-                  </div>
-                )}
+                <div className="repo-stats">
+                  {repoData[project.repo]?.stars > 0 && (
+                    <div className="stats-count">
+                      <FaStar className="star-icon" />
+                      <span>{repoData[project.repo].stars}</span>
+                    </div>
+                  )}
+                  {repoData[project.repo]?.forks > 0 && (
+                    <div className="stats-count">
+                      <FaCodeBranch className="fork-icon" />
+                      <span>{repoData[project.repo].forks}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           ))}
