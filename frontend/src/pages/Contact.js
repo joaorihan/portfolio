@@ -9,9 +9,9 @@ function Contact() {
       <Header />
       
       <main className="content-section">
-        <h1 className="section-title">Entre em Contato</h1>
+        <h1 className="section-title">Get in touch!</h1>
         <p className="section-description">
-          Estou sempre aberto para discutir novos projetos, ideias criativas ou oportunidades de fazer parte de suas visões.
+          I'm always open to discuss new projects, creative ideas or opportunities to be part of your visions.
         </p>
         
         <div className="contact-container">
@@ -21,13 +21,13 @@ function Contact() {
           
           <div className="contact-methods">
             <a 
-              href="mailto:joaorihan@example.com"
+              href="mailto:joaorihan@gmail.com"
               className="contact-method"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaEnvelope className="contact-icon" />
-              <span>joaorihan@example.com</span>
+              <span>joaorihan@gmail.com</span>
             </a>
             
             <a 
