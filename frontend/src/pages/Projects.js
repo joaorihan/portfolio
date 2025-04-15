@@ -13,7 +13,7 @@ const projects = [
   {
     title: "CourierPrime",
     description: "A unique mail system plugin for Spigot Minecraft servers",
-    technologies: ["Java", "SpigotMC"],
+    technologies: ["Java", "PaperAPI"],
     githubLink: "https://github.com/joaorihan/CourierPrime",
     repo: "joaorihan/CourierPrime"
   },
@@ -27,7 +27,7 @@ const projects = [
   {
     title: "DeckOfCards",
     description: "A physical, customizable and simple 52-card deck framework for minecraft.",
-    technologies: ["Java", "PaperMc"],
+    technologies: ["Java", "PaperAPI"],
     githubLink: "https://github.com/joaorihan/DeckOfCards",
     repo: "joaorihan/DeckOfCards"
   },
@@ -39,11 +39,18 @@ const projects = [
     repo: "joaorihan/flask-todo-app"
   },
   {
-    title: "RockPaperScissors",
-    description: "An interactive two-hand rock-paper-scissors game built with C#.",
-    technologies: ["C#"],
-    githubLink: "https://github.com/joaorihan/rock-paper-scissors",
-    repo: "joaorihan/rock-paper-scissors"
+    title: "MoodBeats",
+    description: "A music recommendation system built with React and Node.js. *This is a work in progress*",
+    technologies: ["Java", "React", "Node.js"],
+    githubLink: "https://github.com/joaorihan/MoodBeats",
+    repo: "joaorihan/MoodBeats"
+  },
+  {
+    title: "Password Generator",
+    description: "A simple password generator built with Python.",
+    technologies: ["Python"],
+    githubLink: "https://github.com/joaorihan/password-generator",
+    repo: "joaorihan/password-generator"
   },
 
 ];
@@ -79,6 +86,9 @@ function Projects() {
       
       <main className="content-section">
         <h1 className="section-title">Projects</h1>
+        <p className="section-description">
+          Here are some of the projects I've worked on, as a hobby and for fun.
+        </p>
         
         <div className="projects-grid">
           {projects.map((project, index) => (

@@ -11,8 +11,8 @@ function About() {
         <div className="about-content">
           <p className="about-text">
             I'm a passionate developer with a focus on creating elegant and efficient solutions.
-            My journey in technology started with a curiosity about how things work,
-            and has evolved into a deep appreciation for clean code and user-centered design.
+            My journey in technology started with developing plugins in Java for videogames,
+            and has evolved into a deep appreciation for coding and software development.
           </p>
           
           <div className="skills-section">
@@ -30,8 +30,11 @@ function About() {
               <div className="skill-category">
                 <h3>Backend</h3>
                 <ul>
-                  <li>Node.js</li>
                   <li>Python</li>
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Node.js</li>
+                  <li>Express</li>
                   <li>SQL</li>
                   <li>REST APIs</li>
                 </ul>

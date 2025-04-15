@@ -21,13 +21,13 @@ function Contact() {
           
           <div className="contact-methods">
             <a 
-              href="mailto:joaorihan@gmail.com"
+              href="mailto:joao.rihan@gmail.com"
               className="contact-method"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaEnvelope className="contact-icon" />
-              <span>joaorihan@gmail.com</span>
+              <span>joao.rihan@gmail.com</span>
             </a>
             
             <a 
