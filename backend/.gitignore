@@ -42,3 +42,6 @@ Thumbs.db
 # Ignore test reports
 surefire-reports/
 test-output/
+
+# Ignore node_modules
+node_modules/
