@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaCode, FaServer, FaDatabase } from "react-icons/fa";
 
 function Home() {
   return (
@@ -8,19 +8,49 @@ function Home() {
       <Header />
       
       <main className="hero-section">
-        <h1 className="hero-title">
-          Hi, I'm João
-        </h1>
-        <p className="hero-subtitle">
-          I'm a developer passionate about creating elegant solutions to complex problems.
-        </p>
+        <div className="hero-content">
+          <h1 className="hero-title">
+            João Rihan
+          </h1>
+          <p className="hero-subtitle">
+            Software Developer
+          </p>
+          <p className="hero-description">
+            I build elegant solutions to complex problems, focusing on clean code and user experience.
+          </p>
 
-        <div className="social-icons">
+          <div className="hero-skills">
+            <div className="skill-item">
+              <FaCode className="skill-icon" />
+              <span>Frontend</span>
+            </div>
+            <div className="skill-item">
+              <FaServer className="skill-icon" />
+              <span>Backend</span>
+            </div>
+            <div className="skill-item">
+              <FaDatabase className="skill-icon" />
+              <span>Database</span>
+            </div>
+          </div>
+
+          <div className="hero-cta">
+            <a href="/projects" className="cta-button">
+              View Projects
+            </a>
+            <a href="/contact" className="cta-button cta-secondary">
+              Contact Me
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-social">
           <a
             href="https://github.com/joaorihan"
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"
+            aria-label="GitHub"
           >
             <FaGithub />
           </a>
@@ -29,6 +59,7 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="social-icon"
+            aria-label="LinkedIn"
           >
             <FaLinkedin />
           </a>

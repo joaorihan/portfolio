@@ -25,6 +25,13 @@ const projects = [
     repo: "joaorihan/SOAPoint"
   },
   {
+    title: "Sign Language Translator",
+    description: "A brazilian-sign-language translator built with Python.",
+    technologies: ["Python", "OpenCV", "MediaPipe"],
+    githubLink: "https://github.com/joaorihan/reconhecimento-libras",
+    repo: "joaorihan/reconhecimento-libras"
+  },
+  {
     title: "DeckOfCards",
     description: "A physical, customizable and simple 52-card deck framework for minecraft.",
     technologies: ["Java", "PaperAPI"],
@@ -39,19 +46,20 @@ const projects = [
     repo: "joaorihan/flask-todo-app"
   },
   {
-    title: "MoodBeats",
-    description: "A music recommendation system built with React and Node.js. *This is a work in progress*",
-    technologies: ["Java", "React", "Node.js"],
-    githubLink: "https://github.com/joaorihan/MoodBeats",
-    repo: "joaorihan/MoodBeats"
-  },
-  {
     title: "Password Generator",
     description: "A simple password generator built with Python.",
     technologies: ["Python"],
     githubLink: "https://github.com/joaorihan/password-generator",
     repo: "joaorihan/password-generator"
   },
+  {
+    title: "MoodBeats",
+    description: "A music recommendation system built with React and Node.js. *This is a work in progress*",
+    technologies: ["Java", "React", "Node.js"],
+    githubLink: "https://github.com/joaorihan/MoodBeats",
+    repo: "joaorihan/MoodBeats"
+  },
+  
 
 ];
 
