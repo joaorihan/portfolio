@@ -13,7 +13,7 @@ function Home() {
             João Rihan
           </h1>
           <p className="hero-subtitle">
-            Software Developer
+            Undergraduate student in Software Engineering @ FIAP
           </p>
           <p className="hero-description">
             I build elegant solutions to complex problems, focusing on clean code and user experience.

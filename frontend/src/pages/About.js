@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import '../styles/About.css';
 
 function About() {
   return (
@@ -47,6 +48,20 @@ function About() {
                   <li>VS Code</li>
                   <li>Figma</li>
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="education-section">
+            <h2 className="education-title">Education</h2>
+            <div className="education-grid">
+              <div className="education-item">
+                <h3>Bachelor's Degree in Software Engineering</h3>
+                <p className="institution">FIAP</p>
+                <p className="period">Jan 2023 - Dec 2026</p>
+                <p className="description">
+                  Bachelor's degree in Software Engineering with focus on software development
+                </p>
               </div>
             </div>
           </div>
